@@ -1,0 +1,49 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/audience.jpg");
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
+.keys{
+    width: 100%;
+    justify-content: center;
+    color: white;
+    font-size: 45px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    font-family: "Bauhaus 93";
+}
+.keys p{
+    font-size: 20px;
+    margin: 0;
+    color: darkorange;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.key{
+    width: 100px;
+    padding: 2px;
+    margin: 2px;
+    height: 100px;
+    background-color: rgb(0,0,0, 0.3);
+    background-blend-mode: multiply;
+    border: 5px solid black;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .07s all;
+}
+.playing{
+    transform:scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 10px #ffc600;
+}

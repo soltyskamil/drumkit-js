@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drumkits</title>
+</head>
+<body>
+
+
+    <div class="keys">
+        <div data-key="65" class="key">
+            <bd>A</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="66" class="key">
+            <bd>B</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="67" class="key">
+            <bd>C</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="68" class="key">
+            <bd>D</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="69" class="key">
+            <bd>E</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="70" class="key">
+            <bd>F</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="71" class="key">
+            <bd>G</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="72" class="key">
+            <bd>H</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="73" class="key">
+            <bd>I</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="74" class="key">
+            <bd>J</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="75" class="key">
+            <bd>K</bd>
+            <p>boom</p>
+        </div>
+        <div data-key="76" class="key">
+            <bd>L</bd>
+            <p>boom</p>
+        </div>
+
+    </div>
+
+    <audio data-key="65" src="sounds/asd.mp3"></audio>
+    <audio data-key="66" src="sounds/asd.mp3"></audio>
+    <audio data-key="67" src="sounds/asd.mp3"></audio>
+    <audio data-key="68" src="sounds/asd.mp3"></audio>
+    <audio data-key="69" src="sounds/asd.mp3"></audio>
+    <audio data-key="70" src="sounds/asd.mp3"></audio>
+    <audio data-key="71" src="sounds/asd.mp3"></audio>
+    <audio data-key="72" src="sounds/asd.mp3"></audio>
+    <audio data-key="73" src="sounds/asd.mp3"></audio>
+    <audio data-key="74" src="sounds/asd.mp3"></audio>
+    <audio data-key="75" src="sounds/asd.mp3"></audio>
+    <audio data-key="76" src="sounds/asd.mp3"></audio>
+    <script>
+        window.addEventListener('keydown', function (e){
+                const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+                const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+                if (!audio) return;
+                audio.currentTime = 0;
+                audio.play();
+                key.classList.add('playing');
+            }
+        )
+        function removeTransition(e){
+            if (e.propertyName !== 'transform') return;
+            this.classList.remove('playing')
+
+        }
+
+        const keys = document.querySelectorAll('.key')
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+    </script>
+</body>
+</html>
